@@ -56,7 +56,7 @@ $config = [
 	"show_url"	=> 'http://xxx.com/show_url'
 ];
 
-$form = $pay->setConfig($config)->buildRequestForm(); // 将生成一个支付表单就使用js提交表单, 还提供一个只生成支付链接的方法 buildRequestUrl();
+$form = $pay->setConfig($config)->buildRequestForm(); // 将生成一个支付表单就使用js提交表单, 							// 还提供一个只生成支付链接的方法 buildRequestUrl();
 return Response::make($form);
 ```
 
@@ -67,10 +67,12 @@ $pay = Alipay::instance('web');
 $notify_result = $pay->verifyNotify();
 
 if($notify == true){
-	//$pay->getNotifyData() 方法可以获取回调的notify_data数据。**注意** 只获取 notify_data 字段数据，并非所有回调数据。所有数据你可以使用$_POST或Input::all()获取
+	//$pay->getNotifyData() 方法可以获取回调的notify_data数据。
+	//**注意** 只获取 notify_data 字段数据，并非所有回调数据。所有数据你可以使用$_POST或Input::all()获取
 	//执行你的业务逻辑，例如更新订单状态，记录支付情况等等
 	
-	die('success'); // 处理完成后必须返回 success 告诉支付宝。**注意** 只能返回success，不能带有其他东西。
+	die('success'); // 处理完成后必须返回 success 告诉支付宝。
+					//**注意** 只能返回success，不能带有其他东西。
 }else{
 	//验证失败 执行你的业务逻辑
 }

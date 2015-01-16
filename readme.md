@@ -1,10 +1,10 @@
 
 ###Statement
-本组件目前只支持手机网站(wap)快捷支付（即时到账）和 pc网站快捷支付(即时到账)
+本组件目前只支持手机网站(wap)快捷支付（即时到账）和 pc网站快捷支付(即时到账)。组件改自支付宝接口demo。【版本：3.3 日期：2012-07-23】。目的只是为了方便自己使用，所以没有进行严格测试，只在本人项目中测试通过并使用。
 
 ###Install
 
-1.将 ```'hardywen/alipay': 'dev-master'``` 加入composer.json文件 (Insert ```'hardywen/alipay': 'dev-master'``` into composer.json)
+1.将 ```'hardywen/alipay': 'dev-master'``` 加入composer.json文件 (Add ```'hardywen/alipay': 'dev-master'``` to composer.json)
 
 ```json
 "require": {

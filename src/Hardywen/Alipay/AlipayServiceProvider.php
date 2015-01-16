@@ -19,7 +19,7 @@ class AlipayServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('hardy/alipay');
+		$this->package('hardywen/alipay');
 	}
 
 	/**

@@ -15,7 +15,7 @@
 
 ```
 
-2.运行```composer install``` 安装本组件 (run ```composer install``` to install this service)
+2.运行```composer update``` 安装本组件 (run ```composer update``` to install this service)
 
 3.在```app/config/app.php```中加入以下配置 (Add below config to ```app/config/app.php```)
 
@@ -37,7 +37,7 @@
 
 4.运行下面这条命令(Run comment below)
 
-```php artisan config:publish hardy/alipay```
+```php artisan config:publish hardywen/alipay```
 
 5.运行上面命令后，可以在 ```app/config/packages/hardywen/alipay/config```里配置支付宝的相关参数 （After step 4, you can config your Alipay configurations in  ```app/config/packages/hardywen/alipay/config```）
 

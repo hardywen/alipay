@@ -1,6 +1,8 @@
 {
     "name": "hardywen/alipay",
-    "description": "",
+    "description": "支付宝接口 Alipay payment interface",
+    "keywords": ["PHP","laravel","Laravel 4", "支付宝", "Alipay"],
+    "license": "MIT",
     "authors": [
         {
             "name": "HardyWen",

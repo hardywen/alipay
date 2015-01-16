@@ -71,9 +71,12 @@ $pay = Alipay::instance('web');
 $notify_result = $pay->verifyNotify();
 
 if($notify == true){
-	//$pay->getNotifyData() 方法可以获取回调的notify_data数据。
-	//**注意** 只获取 notify_data 字段数据，并非所有回调数据。所有数据你可以使用$_POST或Input::all()获取
+	
 	//执行你的业务逻辑，例如更新订单状态，记录支付情况等等
+	
+	//如果是wap支付，那么可以使用 $pay->getNotifyData() 方法获取回调的notify_data数据。
+	//**注意** 只针对wap支付，只获取notify_data字段数据，并非所有回调数据。所有数据你可以使用$_POST或Input::all()获取
+	
 	
 	die('success'); // 处理完成后必须返回 success 告诉支付宝。
 					//**注意** 只能返回success，不能带有其他东西。

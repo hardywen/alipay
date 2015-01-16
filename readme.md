@@ -1,3 +1,7 @@
+
+###Statement
+本组件目前只支持手机网站(wap)快捷支付（即时到账）和 pc网站快捷支付(即时到账)
+
 ###Install
 
 1.将 ```'hardywen/alipay': 'dev-master'``` 加入composer.json文件 (Insert ```'hardywen/alipay': 'dev-master'``` into composer.json)
@@ -11,7 +15,7 @@
 
 ```
 
-2. 运行```composer install``` 安装本组件 (run ```composer install``` to install this service)
+2.运行```composer install``` 安装本组件 (run ```composer install``` to install this service)
 
 3.在```app/config/app.php```中加入以下配置 (Add below config to ```app/config/app.php```)
 
@@ -39,9 +43,9 @@
 
 ###Usage
 
-6.使用wap支付方式支付()
+6.支付样例(Payment Example)
 ```php
-$wap = Alipay::instance('web');
+$pay = Alipay::instance('web'); // 如果要使用wap支付，则使用 $pay = Alipay::instance('wap')
 $config = [
 	"notify_url"	=> 'http://xxx.com/notify_url', // 异步通知地址
 	"call_back_url"	=> 'http://xxx.com/call_back_url',//前台跳转地址
@@ -49,9 +53,27 @@ $config = [
 	"subject"	=> 'test',
 	"total_fee"	=> '0.01',
 	//"body"	=> '测试',
-	"show_url"	=> 'http://m.bancaiyi.com:8000/products'
+	"show_url"	=> 'http://xxx.com/show_url'
 ];
 
-$form = $wap->setConfig($config)->buildRequestForm();
+$form = $pay->setConfig($config)->buildRequestForm(); // 将生成一个支付表单就使用js提交表单, 还提供一个只生成支付链接的方法 buildRequestUrl();
 return Response::make($form);
 ```
+
+7.回调样例(Notify Example)
+```php
+$pay = Alipay::instance('web');
+
+$notify_result = $pay->verifyNotify();
+
+if($notify == true){
+	//$pay->getNotifyData() 方法可以获取回调的notify_data数据。**注意** 只获取 notify_data 字段数据，并非所有回调数据。所有数据你可以使用$_POST或Input::all()获取
+	//执行你的业务逻辑，例如更新订单状态，记录支付情况等等
+	
+	die('success'); // 处理完成后必须返回 success 告诉支付宝。**注意** 只能返回success，不能带有其他东西。
+}else{
+	//验证失败 执行你的业务逻辑
+}
+```
+
+

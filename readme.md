@@ -56,7 +56,8 @@ $config = [
 	"show_url"	=> 'http://xxx.com/show_url'
 ];
 
-$form = $pay->setConfig($config)->buildRequestForm(); // 将生成一个支付表单就使用js提交表单, 							// 还提供一个只生成支付链接的方法 buildRequestUrl();
+$form = $pay->setConfig($config)->buildRequestForm(); // 将生成一个支付表单就使用js提交表单, 
+// 还提供一个只生成支付链接的方法 buildRequestUrl();
 return Response::make($form);
 ```
 

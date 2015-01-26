@@ -59,7 +59,7 @@ $config = [
 //setConfig()方法将传入的配置参数与配置文件中的参数合并，
 //如果有相同的参数项，配置文件中的配置将会被传入的新配置覆盖。
 
-$form = $pay->setConfig($config)->buildRequestForm(); // 将生成一个支付表单就使用js提交表单, 
+$form = $pay->setConfig($config)->buildRequestForm(); // 将生成一个支付表单,并使用js提交表单, 
 // 还提供一个只生成支付链接的方法 buildRequestUrl();
 return Response::make($form);
 ```
@@ -70,7 +70,7 @@ $pay = Alipay::instance('web');
 
 $notify_result = $pay->verifyNotify();
 
-if($notify == true){
+if($notify_result == true){
 	
 	//执行你的业务逻辑，例如更新订单状态，记录支付情况等等
 	

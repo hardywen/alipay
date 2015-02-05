@@ -3,6 +3,7 @@
 use Hardywen\Alipay\Base;
 use Illuminate\Support\Facades\Log;
 
+
 class WapPay extends Base{
 
 
@@ -248,7 +249,7 @@ class WapPay extends Base{
 		$data = $_POST;
 		$content = $data['notify_data'];
 
-		if($data['sign_type'] === '0001' || $data['sign_type' === 'RSA']){
+		if($data['sec_id'] === '0001' || $data['sec_id'] === 'RSA'){
 			$content = $this->decrypt($content);
 		}
 

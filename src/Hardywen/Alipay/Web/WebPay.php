@@ -1,6 +1,7 @@
 <?php namespace Hardywen\Alipay\Web;
 
 use Hardywen\Alipay\Base;
+use Illuminate\Support\Facades\Log;
 
 class WebPay extends Base{
 

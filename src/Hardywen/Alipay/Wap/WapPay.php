@@ -1,6 +1,7 @@
 <?php namespace Hardywen\Alipay\Wap;
 
 use Hardywen\Alipay\Base;
+use Illuminate\Support\Facades\Log;
 
 class WapPay extends Base{
 

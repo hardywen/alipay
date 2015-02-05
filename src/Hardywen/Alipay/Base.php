@@ -3,7 +3,7 @@
 use Hardywen\Alipay\lib\CoreFunctions;
 use Hardywen\Alipay\lib\Md5Functions;
 use Hardywen\Alipay\lib\RsaFunctions;
-use Log;
+use Illuminate\Support\Facades\Log;
 
 class Base {
 

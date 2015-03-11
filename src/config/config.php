@@ -56,7 +56,7 @@ return array(
 
 
 		//页面跳转同步通知页面路径
-		'return_url' => '',
+		'call_back_url' => '',
 
 
 		//操作中断返回地址

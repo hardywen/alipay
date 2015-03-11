@@ -48,7 +48,7 @@
 $pay = Alipay::instance('web'); // 如果要使用wap支付，则使用 $pay = Alipay::instance('wap')
 $config = [
 	"notify_url"	=> 'http://xxx.com/notify_url', // 异步通知地址
-	"call_back_url"	=> 'http://xxx.com/call_back_url',//前台跳转地址
+	"return_url"	=> 'http://xxx.com/call_back_url',//前台跳转地址【注意：】wap支付则是 call_back_url 参数（支付宝接口真不统一！）
 	"out_trade_no"	=> 'xxxxxxxx', //订单号
 	"subject"	=> 'test',
 	"total_fee"	=> '0.01',

@@ -29,7 +29,7 @@ return array(
 
 		//支付宝公钥  **注意** 此为 支付宝 的公钥，并不是商户的公钥
 		//如果签名方式(sign_type)设置为“0001”时，请设置该参数
-		'alipay_private_key' => file_get_contents(__DIR__.'/key/alipay_public_key.pem'),//demo中只是提供路径，本接口直接配置公钥
+		'alipay_public_key' => file_get_contents(__DIR__.'/key/alipay_public_key.pem'),//demo中只是提供路径，本接口直接配置公钥
 
 
 		//字符编码格式 目前支持 gbk 或 utf-8

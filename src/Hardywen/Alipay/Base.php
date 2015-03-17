@@ -230,10 +230,10 @@ class Base {
 				$isSign = $this->md5Verify($prestr, $sign, $this->alipay_config['key']);
 				break;
 			case "RSA" :
-				$isSign = $this->rsaVerify($prestr, trim($this->alipay_config['alipay_private_key']), $sign);
+				$isSign = $this->rsaVerify($prestr, trim($this->alipay_config['alipay_public_key']), $sign);
 				break;
 			case "0001" :
-				$isSign = $this->rsaVerify($prestr, trim($this->alipay_config['alipay_private_key']), $sign);
+				$isSign = $this->rsaVerify($prestr, trim($this->alipay_config['alipay_public_key']), $sign);
 				break;
 			default :
 				$isSign = false;

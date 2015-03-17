@@ -119,7 +119,7 @@ class WebPay extends Base{
 				}
 				$log_text = "[===AliPay Notify===]responseTxt=" . $responseTxt . "\n notify_url_log:isSign=" .$isSignStr. "\n";
 				$log_text = $log_text . $this->createLinkString($_POST);
-				Log::error($log_text);
+				Log::info($log_text);
 			}
 
 
